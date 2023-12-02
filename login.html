@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="login.css">
+	<script src="login_cliente.js" defer></script>
+	<title>Iniciar Sesión</title>
+</head>
+<body class="body1 fondo2">
+	<!--<div><h2>Bienvenido al RAFI's Training Log</h2></div>-->
+	<!--<div class="color-fondo"></div>-->
+	<div id="alerta_error" class="alert fade_error .fade alerta esconder">
+		<!--<div id="mensaje_alerta"><strong>warning!</strong></div>-->
+		<strong id="mensaje_alerta_error">warning!</strong>
+		<!--<button aria-hidden="true" data-dismiss="alert" class="close" id="cerrarAlerta" type="button">&times;</button>-->
+	</div>
+	<div id="alerta_exito" class="alert fade_success .fade alerta esconder">
+		<!--<div id="mensaje_alerta"><strong>warning!</strong></div>-->
+		<strong id="mensaje_alerta_exito">warning!</strong>
+		<!--<button aria-hidden="true" data-dismiss="alert" class="close" id="cerrarAlerta" type="button">&times;</button>-->
+	</div>
+	<div class="container" id="container">
+	<div class="form-container sign-up-container">
+		<form method="POST" id="form_registro">
+		<!--<form action="/" id="form_registro">-->
+			<h1>Registro</h1>
+			<!--<span>Registrar un nuevo administrador del sistema</span>-->
+			<input type="text" id="r_nombre" name="r_nombre" required placeholder="Nombre" />
+			<input type="text" id="r_apellido_pat" name="r_apellido_pat" required placeholder="Apellido Paterno"/>
+			<input type="text" id="r_apellido_mat" name="r_apellido_mat" required placeholder="Apellido Materno"/>
+			<input type="text" id="r_username" name="r_username" required placeholder="Nombre de Usuario" />
+			<input type="password" id="r_contra" name="r_contra" required placeholder="Contraseña"/>
+			<input type="password" id="r_conf_contra" name="r_conf_contra" required placeholder="Confirmar contraseña"/>
+            <div class="casilla">
+                <input type="checkbox" id="r_privilegiado" name="r_privilegiado" value="true"/>
+                <!-- <label for="r_privilegiado">Dar permisos avanzados</label> -->
+            </div>
+            <button id="registrarse">Registrarse</button>
+		</form>
+	</div>
+	<div class="form-container sign-in-container">
+		<form method="post" id="form_iniciar_sesion">
+			<h1>Iniciar Sesión</h1>
+			<input type="text" id="is_username" name="is_username" placeholder="Nombre de Usuario" />
+			<input type="password" id="is_contra" name="is_contra" placeholder="Contraseña" />
+			<!-- <a href="#">¿Olvidaste tu contraseña?</a> -->
+			<button>Iniciar Sesión</button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1>¿Ya tienes una cuenta?</h1>
+				<p>Inicia sesión con tu nombre de usuario y contraseña</p>
+				<button class="ghost" id="signIn">Ir a iniciar Sesión</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1>¿Nuevo en el sistema?</h1>
+				<p>Crea una cuenta para poder iniciar sesión</p>
+				<button class="ghost" id="signUp">Ir a Regsitro</button>
+			</div>
+		</div>
+	</div>
+	</div>
+</body>
+</html>

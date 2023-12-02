@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="login.css">
+    <script src="https://kit.fontawesome.com/156e72c5c7.js" crossorigin="anonymous"></script>
+    <script src="inicio_cliente.js" defer></script>
+</head>
+<body class="body1 fondo5">
+    <div id="modal-registro-socio" class = "modal">
+        <div class="container container-modal">
+            <i id="cerrar-modal-registro-socio" class="fa-solid fa-circle-xmark contenedor-icono-boton boton-cerrar botoncito-cierrate-pls"></i>
+            <!-- <span id="cerrar-modal-registro-socio" class="contenedor-icono-boton boton-cerrar">&times;</span> -->
+            <div id="div-form-registro-socios"class="form-container">
+                <h1>Registrar Nuevo Socio</h1>
+                <p>Los campos marcados con (*) son de caracter obligatorio.</p>
+                <form id="form-registro-socios" class="formulario">
+                    <span class="fila-registro-socios">
+                        <input class="input-registro" type="text" id="s_nombre" name="s_nombre" placeholder="*Nombre" required>
+                        <input class="input-registro" type="text" id="s_apellido_pat" name="s_apellido_pat" placeholder="*Apellido Paterno" required>
+                    </span>
+                    <span class="fila-registro-socios">
+                        <input class="input-registro" type="text" id="s_apellido_mat" name="s_apellido_mat" placeholder="Apellido Materno">
+                        <input class="input-registro" type="text" id="s_telefono" name="s_telefono" placeholder="Teléfono">
+                    </span>
+                    <span class="fila-registro-socios">
+                        <input class="input-registro" type="email" id="s_correo" name="s_correo" placeholder="*Correo Electrónico" required>
+                        <select id="s_entrenamiento" name="s_entrenamiento">
+                            <option id="no-selec" value="" disabled selected>*Nivel de Entrenamiento</option>
+                            <option value="1">Cero</option>
+                            <option value="2">Principiante</option>
+                            <option value="3">Intermedio</option>
+                            <option value="4">Avanzado</option>
+                        </select>
+                    </span>
+                    <label for="s_foto">Fotografía</label>
+                    <span id="ultimo-span" class="fila-registro-socios">
+                        <img id="selec-imagen" src="profile_pics/sin-foto.jpg" alt="No hay una foto seleccionada">
+                        <input class="input-registro" type="file" id="s_foto" name="s_foto" accept="image/jpeg">
+                        <!-- <span id="span-foto">
+                        </span> -->
+                    </span>
+                    <label for="s_vigencia">*Vigencia de su Membresía</label>
+                    <span class="fila-registro-socios">
+                            <input class="input-registro" type="date" id="s_vigencia" name="s_vigencia">
+                    </span>
+                    <button>Registrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="modal-checador" class = "modal">
+        <div id="div-modal-checador" class="container container-modal">
+            <i id="cerrar-modal-checador" class="fa-solid fa-circle-xmark contenedor-icono-boton boton-cerrar botoncito-cierrate-pls"></i>
+            <div id="div-checador" class="form-container">
+                <h1 id="titulo-modal-checador">Registrar Nuevo Socio</h1>
+                <div id="div-checador-imagen">
+                    <img id="imagen-modal-checador" src="profile_pics/sin-foto.jpg" alt="fotografia del socio">
+                </div>
+                <p id="no-socio-modal-checador" class="p-modal-checador">No. de Socio: #</p>
+                <h3 id="nombre-modal-checador" class="subtitulo-modal-checador">Nombre del socio</h3>
+                <div id= "div-checador-horas">
+                    <div id = "div-checador-hora-entrada">
+                        <h3 class="subtitulo-modal-checador">Hora de Entrada:</h3>
+                        <h3 id = "hora-entrada-modal-checador" class="contenido-modal-checador">00:00</h3>
+                    </div>
+                    <div id = "div-checador-hora-salida">
+                        <h3 class="subtitulo-modal-checador">Hora de Salida:</h3>
+                        <h3 id = "hora-salida-modal-checador" class="contenido-modal-checador">23:00</h3>
+                    </div>
+                </div>
+                <div id = "div-checador-vigencia" class = "ocultar-texto">
+                    <h3 id="subtitulo-modal-checador" class="subtitulo-modal-checador">Su membresía terminará el: </h3>
+                    <h3 id="vigencia-modal-checador" class="contenido-modal-checador"> fecha </h3>
+                </div>
+                <span class="espacio-blanco">.</span>
+            </div>
+        </div>
+    </div>
+    <div id="modal-entrenando" class = "modal">
+        <div id="div-modal-entrenando" class = "container container-modal">
+            <i id="cerrar-modal-entrenando" class="fa-solid fa-circle-xmark contenedor-icono-boton boton-cerrar botoncito-cierrate-pls"></i>
+            <div id="div-entrenando" class="form-container">
+                <h1>Socios Entrenando</h1>
+                <p id="no-hay-socios-entrenando">No hay Socios entrenando en este momento.</p>
+                <div id = "grid-socios-entrenando">
+                </div>
+            </div>
+            <span class="espacio-blanco">.</span>
+        </div>
+    </div>
+    <div id="alerta_error" class="alert fade_error .fade alerta esconder">
+		<strong id="mensaje_alerta_error">warning!</strong>
+	</div>
+	<div id="alerta_exito" class="alert fade_success .fade alerta esconder">
+		<strong id="mensaje_alerta_exito">warning!</strong>
+	</div>
+    <div id="div-boton-regreso-2" class = "div-boton-regreso">
+        <span id="boton-regreso-buscador-2"class="contenedor-icono-boton blanco">
+            <i class="fa-solid fa-arrow-left icono-boton"></i>
+            Cerrar 
+            <br>
+            Sesión
+        </span>
+    </div>
+    <div class="container right-panel-active" id="container">
+        <div class="form-container sign-up-container">
+            <form method="POST" id="form_registro">
+            <!--<form action="/" id="form_registro">-->
+                <h1>Checador</h1>
+                <!--<span>Registrar un nuevo administrador del sistema</span>-->
+                <!-- <form id = "reloj-checador"> -->
+                <input type="text" id="chk_id_socio" name="chk_id_socio" required placeholder="No. de Socio" />
+                <!-- </form> -->
+                <div class="botonera">
+                    <span id="boton-checar-entrada" class="contenedor-icono-boton">
+                        <i class="fa-solid fa-arrow-right-to-bracket icono-boton"></i>
+                        <br>
+                        Checar 
+                        <br>
+                        entrada
+                    </span>
+                    <span id="boton-checar-salida" class="contenedor-icono-boton">
+                        <i class="fa-solid fa-arrow-right-from-bracket icono-boton"></i>
+                        <br>
+                        Checar 
+                        <br>
+                        salida
+                    </span>
+                </div>
+                <!-- Quitar Usuario
+                    <i class="fa-solid fa-user-minus"></i> -->
+                <h1>Más opciones</h1>
+                <div class="botonera">
+                    <span id="boton-registro-socio" class="contenedor-icono-boton">
+                        <i class="fa-solid fa-user-plus icono-boton"></i>
+                        <br>
+                        Registrar 
+                        <br>
+                        socio
+                    </span>
+                    <span id="boton-buscar-socio" class="contenedor-icono-boton">
+                        <i class="fa-solid fa-magnifying-glass icono-boton"></i>
+                        <br>
+                        Buscar 
+                        <br>
+                        socio
+                    </span>
+                    <span id="boton-socios-entrenando" class="contenedor-icono-boton">
+                        <i class="fa-solid fa-dumbbell icono-boton"></i>
+                        <br>
+                        Socios 
+                        <br>
+                        entrenando
+                    </span>
+                </div>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <!--<h1>¿Ya tienes una cuenta?</h1>-->
+                    <!--<p>Inicia sesión con tu nombre de usuario y contraseña</p>-->
+                    <!--<button class="ghost" id="signIn">Ir a iniciar Sesión</button>-->
+                    <!-- <div class="logo">
+                        <img src="/IMG/logo2.png" alt="Logo RAFIS GYM">
+                    </div> -->
+                    <img class = "logo" src="/IMG/logo5.png" alt="Logo RAFIS GYM">
+                    <div id="reloj"></div>
+                    <div id="fecha"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

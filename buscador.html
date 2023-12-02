@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="login.css">
+    <script src="https://kit.fontawesome.com/156e72c5c7.js" crossorigin="anonymous"></script>
+    <script src="buscador_cliente.js" defer></script>
+</head>
+<body class="body2 fondo6">
+    <div id="alerta_error" class="alert fade_error .fade alerta esconder">
+		<strong id="mensaje_alerta_error">warning!</strong>
+	</div>
+	<div id="alerta_exito" class="alert fade_success .fade alerta esconder">
+		<strong id="mensaje_alerta_exito">warning!</strong>
+	</div>
+    <div class = "div-boton-regreso">
+        <span id="boton-regreso-buscador"class="contenedor-icono-boton blanco">
+            <i class="fa-solid fa-arrow-left icono-boton"></i>
+            Regresar
+        </span>
+    </div>
+    <div class = "barra-buscador">
+        <form id="form-buscador" >
+            <input name="b-buscar" id="b-buscar" type="text" placeholder="Buscar...">
+            <p>Filtrar por:</p>
+            <select name="b-filtrar-por" id="b-filtrar-por">
+                <option value="id_miembro">No. de Socio</option>
+                <option value="nombre">Nombre</option>
+                <option value="apellido_pat">Apellido Paterno</option>
+                <option value="apellido_mat">Apellido Materno</option>
+                <option value="telefono">Teléfono</option>
+                <option value="correo">Correo</option>
+            </select>
+            <!-- <button id="b-enviar">Buscar</button> -->
+        </form>
+    </div>
+    <div class="div-tabla">
+        <table id="tabla-buscador">
+            <thead>
+                <tr>
+                    <th>
+                        <span class="casilla" id="id_miembro" name="id_miembro">
+                            No. de Socio
+                            <i class="fa-solid fa-sort"></i>
+                        </span>
+                    </th>
+                    <th>
+                        <span class="casilla" id="nombre" name="nombre">
+                            Nombre
+                            <i class="fa-solid fa-sort"></i>
+                        </span>
+                    </th>
+                    <th>
+                        <span class="casilla" id="apellido_pat" name="apellido_pat">
+                            Apellido Paterno
+                            <i class="fa-solid fa-sort"></i>
+                        </span>
+                    </th>
+                    <th>
+                        <span class="casilla" id="apellido_mat" name="apellido_mat">
+                            Apellido Materno
+                            <i class="fa-solid fa-sort"></i>
+                        </span>
+                    </th>
+                    <th>
+                        <span class="casilla" id="telefono" name="telefono">
+                            Teléfono
+                            <i class="fa-solid fa-sort"></i>
+                        </span>
+                    </th>
+                    <th>
+                        <span class="casilla" id="correo" name="correo">
+                            Correo
+                            <i class="fa-solid fa-sort"></i>
+                        </span>
+                    </th>
+                    <th>
+                        <span class="casilla" id="miembro_desde" name="miembro_desde">
+                            Fecha de Registro
+                            <i class="fa-solid fa-sort"></i>
+                        </span>
+                    </th>
+                    <th>
+                        <span class="casilla" id="vigencia" name="vigencia">
+                            Vigencia Membresía
+                            <i class="fa-solid fa-sort"></i>
+                        </span>
+                    </th>
+                    <th>
+                        <span class="casilla" id="activo" name="activo">
+                            Activo
+                            <i class="fa-solid fa-sort"></i>
+                        </span>
+                    </th>
+                    <th>
+                        <span class="casilla" id="nombre_nivel" name="nombre_nivel"> 
+                            Nivel de Entrenamiento
+                            <i class="fa-solid fa-sort"></i>
+                        </span>
+                    </th>
+                </tr>
+            </thead>
+            <tbody id="t-body">
+                <tr>
+                    <td>666</td>
+                    <td>Carlos</td>
+                </tr>
+            </tbody>
+        </table>
+        <p id= "cantidad-resultados-tabla" class="blanco">Resultados encontrados:</p>
+    </div>
+</body>
+</html>
